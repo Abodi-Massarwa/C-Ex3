@@ -114,12 +114,14 @@ int similar (char *s, char *t, int n){
     return 0;
     
 }
-void print_lines(char * str){
+char* print_lines(char * str){
     char str_1[LINE];
-    gets(str_1);
+    char* flag;
+    flag=gets(str_1);
     if(substring(str_1,str)){
         printf("%s\n",str_1);
     }
+    return flag;
 }
 
 void clean(char *str){
@@ -127,12 +129,13 @@ for (int i = 0; str[i]!='\0'; i++) {
     str[i]='\0';
 }
 }
-void print_similar_words(char * str){
+char* print_similar_words(char * str){
     int index=0;
+    char* flag;
     size_t i;
     char str_new[LINE];
    // printf("\nenter the desired line : \n");
-    gets(str_new);
+    flag=gets(str_new);
     
     //instead of ------>  apparently scanf("%s",str_new); doesn't respect " "(space)
     //gets works perfectly (tested in 14/12/2019)    
@@ -168,6 +171,39 @@ void print_similar_words(char * str){
             }
            // clean(word);
         
+    }
+   return flag; 
+}
+void run_txtfind(){
+    int flag=0;
+    int i;
+    size_t k=0;
+    char option[2];
+    char first_line[LINE];
+    char word[WORD];
+    printf("insert the .txt file : ");
+    gets(first_line);
+    for (i = 0;first_line[i]!='\0'; i++) {
+        if(first_line[i]!=' ')
+        word[k++]=first_line[i];
+        //suppose after this iteration the sample becomes such as : catb || cata
+        //TODO init char[2] to give it the option (a||b) then word[--k]='\0' (all outside of for loop)
+        
+    }
+    option[0]=word[--k];//1)
+    word[k]='\0';//2)
+    if(option[0]=='a'){
+        printf("printing the lines the include---> %s",word);
+         printf("\n ");
+      while(print_lines(word)){
+        
+       }
+    }
+    else{
+        printf("looking for words similar to---> %s\n",word);
+    while(print_similar_words(word)){
+       
+    }
     }
     
 }

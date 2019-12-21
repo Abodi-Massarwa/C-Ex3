@@ -6,9 +6,10 @@ int substring( char*, char*);
 int similar (char*, char*, int);
 int size(char*);
 int is_word(char *s);
-void print_lines(char*);
-void print_similar_words(char*);
+char* print_lines(char*);
+char* print_similar_words(char*);
 void shift_element(int* arr, int i);
 void insertion_sort(int* arr , int len);
 void run_isort();
+void run_txtfind();
 #endif
