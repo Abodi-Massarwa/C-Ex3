@@ -205,6 +205,5 @@ void run_txtfind(){
        
     }
     }
-    
 }
 
